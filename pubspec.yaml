@@ -27,4 +27,13 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/tata_power_logo.png
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter_regular.ttf
+          style: normal
+    - family: Code
+      fonts:
+        - asset: assets/fonts/GoogleSansCode_regular.ttf
+          style: normal
 

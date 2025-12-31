@@ -38,16 +38,27 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5),
       extendBodyBehindAppBar: true,
-      body: SafeArea(
+      body: Container(
         child: Column(
           children: [
             // Header
             Container(
-              padding: EdgeInsets.symmetric(vertical: 8),
-              color: Color(0xFF2ECC71),
+              height: 130,
+              margin: const EdgeInsets.only(bottom: 20),
+              padding: const EdgeInsets.only(top: 30, bottom: 0),
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(41, 183, 69, 1),  //PrimaryGreen
+                border: Border.all(color: Colors.black, width: 0.1),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(0),
+                  topRight: Radius.circular(0),
+                  bottomLeft: Radius.circular(18),
+                  bottomRight: Radius.circular(18),
+                ),
+              ),
 
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 24),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -56,13 +67,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 24,
-                        letterSpacing: 0.1,
-                        fontWeight: FontWeight.w600,
+                        letterSpacing: -0.4,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                     Image.asset(
                       'assets/images/tata_power_logo.png',
-                      height: 40,
+                      height: 48,
                       color: Colors.white,
                     ),
                   ],
@@ -72,6 +83,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
             // Content
             Expanded(
+
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(24),
                 child: Column(
@@ -80,7 +92,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     // Welcome Section
                     const Text(
                       'Welcome',
-                      style: TextStyle(fontSize: 16, color: Color(0xFF666666)),
+                      style: TextStyle(fontSize: 24, letterSpacing: -0.4, color: Color(0xFF666666)),
                     ),
                     const SizedBox(height: 4),
                     const Text(
@@ -88,6 +100,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
+                        letterSpacing: -0.4,
                         color: Color(0xFF000000),
                       ),
                     ),
@@ -99,10 +112,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                         color: Colors.white,
+                        border: Border.all(color: Colors.black, width: 0.25),
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
+                            color: Colors.black.withOpacity(0.1),
                             blurRadius: 10,
                             offset: const Offset(0, 2),
                           ),
@@ -147,9 +161,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     const Text(
                       'Quick Actions',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xFF2ECC71),
+                        letterSpacing: -0.2,
+                        color: Color.fromRGBO(41, 183, 69, 0.50),
                       ),
                     ),
                     const SizedBox(height: 16),
@@ -160,7 +175,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           child: _buildActionCard(
                             icon: Icons.edit,
                             title: 'Create Request\nfor your Vehicle',
-                            color: const Color(0xFF8FD5A4),
+                            color: Color.fromRGBO(41, 183, 69, 0.55),
                             onTap: () {},
                           ),
                         ),
@@ -169,7 +184,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           child: _buildActionCard(
                             icon: Icons.check_circle_outline,
                             title: 'Approval/Reject\nRequests',
-                            color: const Color(0xFFE8E8E8),
+
+                            color: const Color.fromRGBO(108, 108, 108, 1.0),
                             onTap: () {},
                           ),
                         ),
@@ -180,25 +196,32 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     // Quotation docs
                     Container(
                       width: double.infinity,
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
-                        color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
-                            blurRadius: 10,
-                            offset: const Offset(0, 2),
-                          ),
-                        ],
+                        // boxShadow: [
+                        //   BoxShadow(
+                        //     color: Colors.black.withOpacity(0.05),
+                        //     blurRadius: 12,
+                        //     offset: const Offset(0, 2),
+                        //   ),
+                        // ],
                       ),
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.description_outlined,
-                            size: 32,
-                            color: Colors.grey[600],
+                          Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Icon(
+                              Icons.description_outlined,
+                              size: 28,
+                              color: Colors.grey.shade600,
+                            ),
                           ),
+
                           const SizedBox(width: 16),
                           Expanded(
                             child: Column(
@@ -207,7 +230,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 const Text(
                                   'Quotation docs',
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xFF000000),
                                   ),
@@ -216,8 +239,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 Text(
                                   'Read your previously uploaded documents',
                                   style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.grey[600],
+                                    fontSize: 12,
+                                    color: Colors.grey[500],
                                   ),
                                 ),
                               ],
@@ -246,35 +269,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
         child: BottomNavigationBar(
           currentIndex: _selectedIndex,
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
-          selectedItemColor: const Color(0xFF2ECC71),
+          onTap: (index) => setState(() => _selectedIndex = index),
+          selectedItemColor: Colors.black,
           unselectedItemColor: Colors.grey[400],
           showSelectedLabels: true,
-          showUnselectedLabels: true,
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.white,
-          elevation: 0,
-          selectedLabelStyle: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
-          ),
-          unselectedLabelStyle: const TextStyle(fontSize: 12),
+          showUnselectedLabels: false,
+          type: BottomNavigationBarType.shifting,
+
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Dashboard'),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline),
-              label: 'Profile',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.policy_outlined),
-              label: 'Policy',
-            ),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+            BottomNavigationBarItem(icon: Icon(Icons.policy), label: 'Policy'),
           ],
-        ),
+        )
+
       ),
     );
   }
@@ -286,19 +294,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
         Text(
           label,
           style: TextStyle(
-            fontSize: 11,
-            color: Colors.grey[600],
-            fontFamily: 'Courier',
+            fontSize: 14,
+            color: Colors.grey[500],
+            fontFamily: 'Inter',
+
+            letterSpacing: -0.2
           ),
         ),
         const SizedBox(height: 4),
         Text(
           value,
           style: const TextStyle(
-            fontSize: 13,
-            fontWeight: FontWeight.w600,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
             color: Color(0xFF000000),
-            fontFamily: 'Courier',
+            fontFamily: 'Code',
           ),
         ),
       ],
