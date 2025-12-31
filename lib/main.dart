@@ -116,9 +116,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: const Offset(0, 2),
+                            color: Colors.black.withOpacity(0.20),
+                            offset: const Offset(3, 3), // right & bottom
+                            blurRadius: 6,
+                            spreadRadius: -1, // prevents shadow on top/left
                           ),
                         ],
                       ),
@@ -185,7 +186,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             icon: Icons.check_circle_outline,
                             title: 'Approval/Reject\nRequests',
 
-                            color: const Color.fromRGBO(108, 108, 108, 1.0),
+                            color: Color(0xF5323232),
                             onTap: () {},
                           ),
                         ),
@@ -274,10 +275,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
           unselectedItemColor: Colors.grey[400],
           showSelectedLabels: true,
           showUnselectedLabels: false,
-          type: BottomNavigationBarType.shifting,
+          type: BottomNavigationBarType.fixed,
 
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Dashboard'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
             BottomNavigationBarItem(icon: Icon(Icons.policy), label: 'Policy'),
           ],
