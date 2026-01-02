@@ -37,10 +37,6 @@ class _Policy extends State<Policy> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
-        ),
         title: const Text(
           'Car & Related Benefits Policy',
           style: TextStyle(
@@ -61,7 +57,8 @@ class _Policy extends State<Policy> {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
                 content: Text('Downloading policy ...'),
-                backgroundColor: Color.fromRGBO(50, 50, 50, 0.9607843137254902),
+                backgroundColor: Color.fromRGBO(
+                    152, 151, 151, 0.9607843137254902),
               ),
             );
 
@@ -191,11 +188,11 @@ class _Policy extends State<Policy> {
 
             // 5. PROCESS FOR AVAILING CAR
             _buildSectionHeader('5. PROCESS FOR AVAILING COMPANY ALLOCATED CAR'),
-            _buildNumberedPoint('1', 'Submit vehicle requisition application to divisional ES&A team'),
-            _buildNumberedPoint('2', 'Select vehicle and obtain quotations from registered dealers'),
-            _buildNumberedPoint('3', 'ES&A provides EMI details; process begins after officer consent'),
-            _buildNumberedPoint('4', 'On delivery, EMI/lease rental deduction starts from monthly salary'),
-            _buildNumberedPoint('5', 'Officers can allocate Maintenance, Fuel, and Driver expenses from Flexi Allowance'),
+            _buildNumberedPoint('i)', 'Submit vehicle requisition application to divisional ES&A team'),
+            _buildNumberedPoint('ii)', 'Select vehicle and obtain quotations from registered dealers'),
+            _buildNumberedPoint('iii)', 'ES&A provides EMI details; process begins after officer consent'),
+            _buildNumberedPoint('iv)', 'On delivery, EMI/lease rental deduction starts from monthly salary'),
+            _buildNumberedPoint('v)', 'Officers can allocate Maintenance, Fuel, and Driver expenses from Flexi Allowance'),
             const SizedBox(height: 20),
 
             // 6. REIMBURSEMENT PROCESS
@@ -251,9 +248,9 @@ class _Policy extends State<Policy> {
             // 9. OFFICERS NOT OPTING CAR SCHEME
             _buildSectionHeader('9. OFFICERS NOT OPTING COMPANY CAR SCHEME'),
             _buildContentText(
-                '• Eligible to claim intra-city travel expenses as per Travel Policy\n'
-                    '• Personal car owners can avail reimbursement for maintenance, fuel, and driver as per Income Tax rules\n'
-                    '• Appropriate declarations required to claim IT benefits'
+                'a) Eligible to claim intra-city travel expenses as per Travel Policy\n'
+                    'b) Personal car owners can avail reimbursement for maintenance, fuel, and driver as per Income Tax rules\n'
+                    'c) Appropriate declarations required to claim IT benefits'
             ),
             const SizedBox(height: 20),
 
@@ -422,7 +419,7 @@ class _Policy extends State<Policy> {
               style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
-                color: Color.fromRGBO(34, 197, 94, 1),
+                color: Color.fromRGBO(133, 133, 133, 0.9607843137254902),
                 fontFamily: 'Inter',
               ),
             ),
@@ -533,7 +530,7 @@ class _Policy extends State<Policy> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, size: 20, color: const Color.fromRGBO(34, 197, 94, 1)),
+          Icon(icon, size: 20, color: const Color.fromRGBO(154, 154, 154, 1.0)),
           const SizedBox(width: 12),
           Expanded(
             child: Column(

@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 class VehicleRequestPage extends StatefulWidget {
   const VehicleRequestPage({super.key});
 
@@ -72,7 +75,7 @@ class _VehicleRequestPageState extends State<VehicleRequestPage> {
             padding: const EdgeInsets.only(right: 16),
             child: Center(
               child: Text(
-                '2/2',
+                '',
                 style: TextStyle(
                   color: Colors.grey[400],
                   fontSize: 16,
@@ -95,7 +98,7 @@ class _VehicleRequestPageState extends State<VehicleRequestPage> {
                     const Text(
                       'Vehicle Details',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
                         color: Color(0xFF2ECC71),
                       ),
@@ -132,14 +135,9 @@ class _VehicleRequestPageState extends State<VehicleRequestPage> {
                     // Vehicle Type
                     _buildLabel('Vehicle Type', required: true),
                     const SizedBox(height: 8),
-                    _buildDropdownField(
-                      value: _selectedVehicleType,
+                    _buildTextField(
+                      controller: _colourController,
                       hint: 'Select Vehicle Type',
-                      onChanged: (value) {
-                        setState(() {
-                          _selectedVehicleType = value;
-                        });
-                      },
                     ),
                     const SizedBox(height: 20),
 
@@ -463,6 +461,7 @@ class _QuotationFormModalState extends State<QuotationFormModal> {
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
                   color: Colors.black,
+                  letterSpacing: -0.4,
                 ),
               ),
               const SizedBox(height: 24),

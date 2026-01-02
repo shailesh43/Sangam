@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../request/request_vehicle.dart';
 
 // Employee Details Page
 class EmployeeDetailsPage extends StatelessWidget {
@@ -247,7 +248,12 @@ class VehicleDetailsPage extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Handle register action
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const VehicleRequestPage(),
+                          ),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromRGBO(34, 197, 94, 1),
