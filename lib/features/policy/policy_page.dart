@@ -52,23 +52,34 @@ class _Policy extends State<Policy> {
         ),
       ),
       backgroundColor: Colors.white,
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
           // Download policy logic here
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Downloading policy...')),
-          );
+          try {
+            // Add flutter_downloader or path_provider package for actual download
+            // For now, showing a message
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Downloading policy ...'),
+                backgroundColor: Color.fromRGBO(50, 50, 50, 0.9607843137254902),
+              ),
+            );
+
+            // Actual implementation would be:
+            // final ByteData bytes = await rootBundle.load('assets/docs/policy.pdf');
+            // final Directory dir = await getApplicationDocumentsDirectory();
+            // final File file = File('${dir.path}/CarPolicy.pdf');
+            // await file.writeAsBytes(bytes.buffer.asUint8List());
+
+          } catch (e) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('Error downloading: $e')),
+            );
+          }
         },
-        backgroundColor: const Color.fromRGBO(34, 197, 94, 1),
-        icon: const Icon(Icons.download, color: Colors.white),
-        label: const Text(
-          'Download',
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.w600,
-          ),
-        ),
+        backgroundColor: const Color.fromRGBO(108, 108, 108, 1.0),
+        child: const Icon(Icons.download, color: Colors.white),
+
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -306,7 +317,7 @@ class _Policy extends State<Policy> {
               child: Column(
                 children: const [
                   Text(
-                    '© 2022 The Tata Power Company Limited',
+                    '© 2025 The Tata Power Co. Ltd.',
                     style: TextStyle(
                       fontSize: 12,
                       color: Color.fromRGBO(107, 114, 128, 1),
@@ -315,7 +326,7 @@ class _Policy extends State<Policy> {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    'Confidential - Internal Use Only',
+                    'Under Development',
                     style: TextStyle(
                       fontSize: 11,
                       color: Color.fromRGBO(156, 163, 175, 1),
