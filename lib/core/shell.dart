@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 //Home dashboard body
-import '/features/dashboard/dashboard_user.dart'; // for user -> this + bottom nav
-import '/features/dashboard/dashboard_admin.dart';// for admin -> this + bottom nav
+import '../features/dashboard/dashboard_user.dart'; // for user -> this + bottom nav
+import '../features/dashboard/dashboard_admin.dart';// for admin -> this + bottom nav
 
 // Profile page body
-import '/features/profile/profile_page.dart';
+import '../features/profile/profile_page.dart';
 //Policy page body
-import '/features/policy/policy_page.dart';
+import '../features/policy/policy_page.dart';
 // Processing page body - for admin only
 import '/features/processing/processing_page.dart';
 
@@ -34,7 +34,7 @@ class _DashboardShellState extends State<DashboardShell> {
       _pages = const [
         HomePage(),
         ApprovalPage(),
-        ProfilePage(),
+        EmployeeDetailsPage(),
         PolicyPage(),
       ];
 
