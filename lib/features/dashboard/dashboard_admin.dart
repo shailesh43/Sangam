@@ -202,7 +202,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     // Quotation docs
                     Container(
                       width: double.infinity,
-                      padding: const EdgeInsetsGeometry.all(4),
+                      padding: const EdgeInsetsGeometry.fromLTRB(4, 0, 4, 8),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         // boxShadow: [
