@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../request/request_vehicle.dart';
+import '../../features/profile/profile_page.dart';
 
 class DashboardUser extends StatelessWidget {
   const DashboardUser({super.key});
@@ -199,7 +200,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             color: Color.fromRGBO(242, 241, 249, 1.0),
                             titleColor: Color.fromRGBO(152, 152, 152, 1.0),
                             iconColor: Color.fromRGBO(152, 152, 152, 1.0),
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const VehicleDetailsPage(),
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ],
