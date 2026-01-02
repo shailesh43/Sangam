@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+import 'core/shell.dart';
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // TEMP: Replace with auth / API / local storage
+  UserRole get _userRole => UserRole.admin; // or UserRole.user
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'GreenGears',
+      theme: ThemeData(
+        useMaterial3: true,
+        scaffoldBackgroundColor: Colors.white,
+      ),
+      home: DashboardShell(role: _userRole),
+    );
+  }
+}
