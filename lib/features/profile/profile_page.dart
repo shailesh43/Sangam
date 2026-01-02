@@ -11,10 +11,10 @@ class EmployeeDetailsPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
-        ),
+        // leading: IconButton(
+        //   // icon: const Icon(Icons.arrow_back, color: Colors.black),
+        //   // onPressed: () => Navigator.pop(context),
+        // ),
         title: const Text(
           'Profile',
           style: TextStyle(
@@ -251,14 +251,14 @@ class VehicleDetailsPage extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromRGBO(34, 197, 94, 1),
-                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        padding: const EdgeInsets.symmetric(vertical: 14),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(24),
                         ),
                         elevation: 0,
                       ),
                       child: const Text(
-                        'Register',
+                        'Request a Vehicle',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16,

@@ -1,20 +1,35 @@
 import 'package:flutter/material.dart';
 
-// Policy Page
 class PolicyPage extends StatelessWidget {
-  const PolicyPage({Key? key}) : super(key: key);
+  const PolicyPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: HelloWorld(),
+        debugShowCheckedModeBanner: false
+    );
+  }
+}
+
+class HelloWorld extends StatefulWidget {
+  const HelloWorld({super.key});
+
+  @override
+  State<HelloWorld> createState() => _HelloWorldState();
+}
+
+class _HelloWorldState extends State<HelloWorld> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
+      appBar: AppBar(backgroundColor: Colors.white,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
-        ),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back, color: Colors.black),
+        //   onPressed: () => Navi? Navigator.pop(context),
+        // ),
         title: const Text(
           'Policy',
           style: TextStyle(
@@ -23,34 +38,15 @@ class PolicyPage extends StatelessWidget {
             fontWeight: FontWeight.w600,
             fontFamily: 'Inter',
           ),
+        ),),
+      backgroundColor: Colors.white,
+      body: const Center(
+        child: Text(
+          'Policy Page',
+          style: TextStyle(fontSize: 24),
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const VehicleDetailsPage(),
-                ),
-              );
-            },
-            child: const Text(
-              'Next →',
-              style: TextStyle(
-                color: Color.fromRGBO(0, 122, 255, 1),
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                fontFamily: 'Inter',
-              ),
-            ),
-          ),
-        ],
       ),
-      body: SingleChildScrollView(
-          child: Column(
-              children: [
-              Text("Policy Page")
-      ),
+
     );
   }
 }

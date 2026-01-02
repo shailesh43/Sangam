@@ -8,7 +8,7 @@ import '../features/profile/profile_page.dart';
 //Policy page body
 import '../features/policy/policy_page.dart';
 // Processing page body - for admin only
-import '/features/processing/processing_page.dart';
+import '../features/processing/processing_page.dart';
 
 enum UserRole { admin, user }
 
@@ -32,8 +32,8 @@ class _DashboardShellState extends State<DashboardShell> {
 
     if (widget.role == UserRole.admin) {
       _pages = const [
-        HomePage(),
-        ApprovalPage(),
+        DashboardAdmin(),
+        ProcessingPage(),
         EmployeeDetailsPage(),
         PolicyPage(),
       ];
@@ -44,22 +44,22 @@ class _DashboardShellState extends State<DashboardShell> {
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.check_circle_outline),
-          label: 'Approve',
+          icon: Icon(Icons.settings),
+          label: 'Processing',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person_outline),
+          icon: Icon(Icons.person),
           label: 'Profile',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.policy_outlined),
+          icon: Icon(Icons.policy),
           label: 'Policy',
         ),
       ];
     } else {
       _pages = const [
-        HomePage(),
-        ProfilePage(),
+        DashboardUser(),
+        EmployeeDetailsPage(),
         PolicyPage(),
       ];
 
@@ -69,11 +69,11 @@ class _DashboardShellState extends State<DashboardShell> {
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person_outline),
+          icon: Icon(Icons.person),
           label: 'Profile',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.policy_outlined),
+          icon: Icon(Icons.policy),
           label: 'Policy',
         ),
       ];
@@ -94,6 +94,8 @@ class _DashboardShellState extends State<DashboardShell> {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: true,
         showUnselectedLabels: false,
+        backgroundColor: Color.fromRGBO(248, 248, 248, 0.75),
+        selectedItemColor: Color.fromRGBO(0, 0, 0, 0.75),
       ),
     );
   }
