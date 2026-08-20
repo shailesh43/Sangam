@@ -1,13 +1,13 @@
 // BentoSection.tsx
-"use client";
-
 import React from "react";
 import PendingTasksCard from "./cards/PendingTasksCard";
 import UpcomingEventsCard from "./cards/UpcomingEventsCard";
+import EmployeeDirectoryCard from "./cards/EmployeeDirectoryCard";
 import TodayAtTPCard from "./cards/TodayAtTPCard";
 import TrendingTodayCard from "./cards/TrendingTodayCard";
-import BirthdaysCard from "./cards/BirthdaysCard";
+import BirthdaysCard from "./cards/WorkAnniversariesCard";
 import EnergyWorldCard from "./cards/EnergyWorldCard";
+import WorkAnniversariesCard from "./cards/WorkAnniversariesCard";
 
 /**
  * Bento-style dashboard grid: "Quick Actions" heading plus six cards
@@ -27,15 +27,14 @@ const BentoSection: React.FC = () => {
     <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <h1 className="text-xl font-bold text-emerald-800 mb-5">Quick Actions</h1>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Row 1 */}
-        <div className="lg:col-span-4">
-          <PendingTasksCard />
-        </div>
-        <div className="lg:col-span-8">
-          <UpcomingEventsCard />
-        </div>
+      {/* Row 1 — three equal squares, flowing down on shorter/narrower screens */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mb-6">
+        <PendingTasksCard />
+        <UpcomingEventsCard />
+        <EmployeeDirectoryCard />
+      </div>
 
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Row 2 */}
         <div className="lg:col-span-8">
           <TodayAtTPCard />
@@ -46,7 +45,7 @@ const BentoSection: React.FC = () => {
 
         {/* Row 3 */}
         <div className="lg:col-span-4">
-          <BirthdaysCard />
+          <WorkAnniversariesCard />
         </div>
         <div className="lg:col-span-8">
           <EnergyWorldCard />

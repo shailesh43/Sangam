@@ -2,32 +2,32 @@
 "use client";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
-import type { HeroSlide } from "./types";
+import { ChevronLeft, ChevronRight, SquareArrowOutUpRight } from "lucide-react";
+import type { HeroSlide } from "../types";
 
 // Feed real banner image URLs via `imgUrl` on each slide
 const SLIDES: HeroSlide[] = [
   {
-    imgUrl: "https://placehold.co/1200x630/1f2937/1f2937?text=+",
+    imgUrl: "https://tatapower.sharepoint.com/_api/v2.0/sharePoint:/sites/Sangam/ImageGallery/CUSTOMER%20TALK-JUNE%202026%20EDITION%20SANGAM%20BANNER.jpg:/driveItem/thumbnails/0/large/content?preferNoRedirect=true",
     alt: "Tata Power sustainability story",
-    ctaLabel: "Read the Story",
+    ctaLabel: "Read Story",
     ctaHref: "#",
   },
   {
-    imgUrl: "https://placehold.co/1200x630/334155/334155?text=+",
+    imgUrl: "https://tatapower.sharepoint.com/_api/v2.0/sharePoint:/sites/Sangam/ImageGallery/THE%20JEH%20WAY%20QUIZ%20SANGAM%20BANNER%20POSTER%20(1).jpg:/driveItem/thumbnails/0/large/content?preferNoRedirect=true",
     alt: "Innovation hub launch",
-    ctaLabel: "Read the Story",
+    ctaLabel: "View Article",
     ctaHref: "#",
   },
   {
-    imgUrl: "https://placehold.co/1200x630/0f2e28/0f2e28?text=+",
+    imgUrl: "https://tatapower.sharepoint.com/_api/v2.0/sharePoint:/sites/Sangam/ImageGallery/Working%20at%20Height%20Safety%20Sangam%20Banner.jpg:/driveItem/thumbnails/0/large/content?preferNoRedirect=true",
     alt: "Employee wellness program",
-    ctaLabel: "Read the Story",
+    ctaLabel: "Visit Site",
     ctaHref: "#",
   },
 ];
 
-const AUTOPLAY_INTERVAL_MS = 5000;
+const AUTOPLAY_INTERVAL_MS = 4000;
 
 const HeroCarousel: React.FC = () => {
   const [index, setIndex] = useState(0);
@@ -94,10 +94,10 @@ const HeroCarousel: React.FC = () => {
       {/* CTA */}
       <a
         href={slide.ctaHref}
-        className="absolute bottom-10 left-6 inline-flex items-center gap-2 rounded-lg bg-emerald-100 px-5 py-3 text-sm font-semibold text-emerald-900 hover:bg-emerald-50 transition-colors"
+        className="absolute bottom-10 left-6 inline-flex items-center gap-2 rounded-full bg-white/70 px-5 py-3 text-sm font-semibold text-zinc-900 hover:bg-zinc-50 transition-colors"
       >
         {slide.ctaLabel}
-        <ArrowRight className="h-4 w-4" />
+        <SquareArrowOutUpRight className="h-4 w-4" />
       </a>
 
       {/* Dots */}
