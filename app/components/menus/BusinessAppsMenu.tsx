@@ -18,11 +18,11 @@ import {
   Database,
   Store,
   FileSignature,
+  FileTextIcon,
   ArrowUpRight,
 } from "lucide-react";
 import MegaMenuWrapper from "./MegaMenuWrapper";
-import type { IconLinkItem } from "../types";
-
+import type { IconLinkItem } from "../types"
 const RISK_COMPLIANCE: IconLinkItem[] = [
   { label: "Internal Audit (Auditors)", icon: Scale },
   { label: "IATS 1.0 & 2.0", icon: CheckCircle2 },
@@ -33,6 +33,7 @@ const RISK_COMPLIANCE: IconLinkItem[] = [
 ];
 
 const CORE_APPS: IconLinkItem[] = [
+  { label: "Pulse Check", icon: FileTextIcon },
   { label: "Office Locator", icon: MapPin },
   { label: "Corp Affairs", icon: Building2 },
   { label: "Gyanmanthan", icon: BookOpen },
