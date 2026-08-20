@@ -19,7 +19,7 @@ const EnergyWorldCard: React.FC<EnergyWorldCardProps> = ({
 
   return (
     <div className="h-full rounded-2xl border border-slate-200 bg-white flex flex-col overflow-hidden">
-      <div className="flex items-center justify-between px-6 pt-6 pb-4 bg-slate-50">
+      <div className="flex items-center justify-between px-6 pt-6 pb-4 bg-slate-50 border-b border-slate-200">
         <h3 className="text-lg font-bold text-emerald-800">Energy World</h3>
         <Zap className="h-5 w-5 text-emerald-700" />
       </div>
