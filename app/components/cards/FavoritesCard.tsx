@@ -40,15 +40,15 @@ const FAVORITES: FavoriteItem[] = [
 
 const FavoritesCard: React.FC = () => {
   return (
-    <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6">
-      <div className="flex items-center justify-between mb-5">
+    <div className="h-full rounded-2xl border border-slate-200 bg-white flex flex-col overflow-hidden">
+      <div className="flex items-center justify-between px-6 pt-6 pb-4 bg-slate-50 border-b border-slate-200">
         <h3 className="text-lg font-bold text-emerald-800">Favorites</h3>
         <button type="button" aria-label="Toggle favorites" className="text-slate-400 hover:text-slate-600">
           <Star className="h-5 w-5" />
         </button>
       </div>
 
-      <ul className="space-y-1">
+      <ul className="space-y-1 px-6 py-3">
         {FAVORITES.map(({ icon: Icon, iconBg, iconColor, title, subtitle, href }) => (
           <li key={title}>
             <a

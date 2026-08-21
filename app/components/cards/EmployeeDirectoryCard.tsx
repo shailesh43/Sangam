@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Search, MessageSquare, UsersRound } from "lucide-react";
+import { Search, SquareUser, UsersRound } from "lucide-react";
 
 interface Employee {
   name: string;
@@ -29,9 +29,6 @@ const EMPLOYEES: Employee[] = [
 
 const TABS = ["Teams", "Conversations"] as const;
 
-// Square widget, same shell as PendingTasksCard/UpcomingEventsCard:
-// fixed header, flexible middle (search + people list, Teams-panel style),
-// fixed footer tabs.
 const EmployeeDirectoryCard: React.FC = () => {
   const [query, setQuery] = useState("");
   const [activeTab, setActiveTab] = useState<(typeof TABS)[number]>("Teams");
@@ -44,7 +41,7 @@ const EmployeeDirectoryCard: React.FC = () => {
     <div className="aspect-square rounded-2xl border border-slate-200 bg-white flex flex-col overflow-hidden">
       <div className="shrink-0 flex items-center justify-between px-6 pt-6 pb-4 bg-slate-50 border-b border-slate-200">
         <h3 className="text-lg font-bold text-emerald-800">Employee Directory </h3>          
-          <UsersRound className="h-4 w-4" />
+          <UsersRound className="h-5 w-5 text-emerald-700" />
       </div>
 
       <div className="flex-1 min-h-0 flex flex-col px-6 py-4">
@@ -90,7 +87,7 @@ const EmployeeDirectoryCard: React.FC = () => {
                     {employee.status} • {employee.role}
                   </p>
                 </div>
-                <MessageSquare className="h-4 w-4 shrink-0 text-slate-400" />
+                <SquareUser className="h-4 w-4 shrink-0 text-slate-400" />
               </button>
             </li>
           ))}

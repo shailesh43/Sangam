@@ -12,9 +12,6 @@ const TABS: FeedTab[] = [
   { label: "Newsletter" },
 ];
 
-// --- Today@TP — image cards, horizontal scroll ---------------------------
-// `categoryColor` now carries a full badge class (bg + text) since the
-// category is rendered as a rounded pill over the image.
 const ARTICLES: ArticleCard[] = [
   {
     imgUrl: "https://placehold.co/400x260/94a3b8/ffffff?text=<img/>",
@@ -22,6 +19,13 @@ const ARTICLES: ArticleCard[] = [
     categoryColor: "bg-emerald-50 text-emerald-700",
     title: "Tata Power commissions 250 MW Solar Project",
     timeAgo: "2 hours ago",
+  },
+  {
+    imgUrl: "https://placehold.co/400x260/94a3b8/ffffff?text=<img/>",
+    category: "BUSINESS",
+    categoryColor: "bg-blue-50 text-blue-700",
+    title: "Tata Power EZ CHARGE Discussion",
+    timeAgo: "1 day ago",
   },
   {
     imgUrl: "https://placehold.co/400x260/94a3b8/ffffff?text=<img/>",
